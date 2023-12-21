@@ -156,15 +156,16 @@
 
         }
 
-        let autobackground = setInterval(function () { colorAuto(); }, 1000); //변경될수있으므로 let
+        let autobackground = setInterval(function () { colorAuto(); }, 2000); //변경될수있으므로 let
 
         document.querySelectorAll(".banner .btns span").forEach((el, idx) => {
-            el.addEventListener('click', function () {
+            el.addEventListener('click', function () { //클릭해야 이것이 실행됨
                 clearInterval(autobackground); //setInterval이 담당하는 자동 롤링을 멈춤
-                // alert(idx) //내가 클릭한 개체를 확인하는것
+                // alert(idx) //내가 클릭한 개체를 확인하는것(클릭된 버튼이 각각의 idx를 인식하고 있음)
                 x = idx;
 
-                document.querySelectorAll(".banner .btns span")[x].classList = 'act'
+                document.querySelector("#banner").classList = "banner " + swiperArr[x];//클릭한 객체의 idx와 동일한 순번의 개체의 이미지를 불러오게함.(3번버튼 클릭했으면 3번 이미지 출력)
+                document.querySelectorAll(".banner .btns span")[x].classList = 'act'//클릭한 버튼만 빨간색이 들어오도록함.
 
             })
         })
