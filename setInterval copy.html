@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .salmon {
+            background-color: salmon;
+        }
+
+        #banner {
+            height: 0;
+            padding-top: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: 0.5s;
+        }
+
+        .bg1 {
+            background-image: url(./sample/s1.jpg);
+            background-repeat: no-repeat;
+
+
+        }
+
+        .bg2 {
+            background-image: url(./sample/s2.jpg);
+            background-repeat: no-repeat;
+
+        }
+
+        .bg3 {
+            background-image: url(./sample/s3.jpg);
+            background-repeat: no-repeat;
+
+        }
+
+        .bg4 {
+            background-image: url(./sample/s4.jpg);
+            background-repeat: no-repeat;
+
+        }
+
+        .bg5 {
+            background-image: url(./sample/s5.jpg);
+            background-repeat: no-repeat;
+
+        }
+
+        .bg6 {
+            background-image: url(./sample/s6.jpg);
+            background-repeat: no-repeat;
+
+        }
+    </style>
+</head>
+
+<body>
+    <span>나는 첫화면과 관계 없다.</span>
+    <div id="banner" class="banner" style="background-image: url(./sample/s0.jpg);">
+        <button>stop</button>
+
+
+
+    </div>
+
+    <script>
+        let count = 0;
+
+        const colorAuto = () => {
+            count++;
+            count %= 6;
+            document.querySelector("#banner").style.backgroundImage = `url(./sample/s${count}.jpg)`;
+        }
+
+        setInterval(colorAuto, 1000)
+
+
+    </script>
+    <!-- 
+    <script>
+    const colorArr = ["red", "yellow", "blue", "green", "black", "salmon"]
+    const swiperArr = ["bg1", "bg2", "bg3", "bg4", "bg5", "bg6"]
+    let x = 0;
+    // document.querySelector("#banner").classList.add("red")
+    function colorAuto() {
+        x++;
+        x %= swiperArr.length;
+        document.querySelector("#banner").classList = "banner " + swiperArr[x];
+    }
+
+    setInterval(colorAuto, 1000)
+
+
+
+
+
+
+</script> 
+-->
+</body>
+
+</html>

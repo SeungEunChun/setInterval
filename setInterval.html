@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .salmon {
+            background-color: salmon;
+        }
+
+        #banner {
+
+            padding-top: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: 0.5s;
+
+        }
+
+        .bg0 {
+            background-image: url(./sample/s0.jpg);
+
+
+        }
+
+        .bg1 {
+            background-image: url(./sample/s1.jpg);
+
+        }
+
+        .bg2 {
+            background-image: url(./sample/s2.jpg);
+
+        }
+
+        .bg3 {
+            background-image: url(./sample/s3.jpg);
+
+        }
+
+        .bg4 {
+            background-image: url(./sample/s4.jpg);
+
+        }
+
+        .bg5 {
+            background-image: url(./sample/s5.jpg);
+
+        }
+
+        .banner .btns {
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        웹기능사 예제
+        1. 3초마다 서서히 나타났다 사라지는 배너 효과 구현
+        2. 3초마다 좌우로 슬라이드하는것
+        3. 3초마다 위아래로 슬라이드하는것    
+    -->
+    <span>바닐라로 스와이퍼 만들기</span>
+    <section class="banner">
+        <div id="banner" class="banner bg0">
+
+            <div class="btns">
+
+            </div>
+
+        </div>
+    </section>
+    <script>
+        const colorArr = ["red", "yellow", "blue", "green", "black", "salmon"]
+        const swiperArr = ["bg0", "bg1", "bg2", "bg3", "bg4", "bg5"]
+        let x = 0;
+        const contentnum = 6;
+        // document.querySelector("#banner").classList.add("red")
+        function colorAuto() {
+            x++;
+            x %= contentnum;
+            document.querySelector("#banner").classList = "banner " + swiperArr[x];
+        }
+
+        setInterval(colorAuto, 3000)
+
+        let btntag = "";
+        for (i = 0; i < contentnum; i++) {
+            btntag += "<span>" + i + "</span>"
+        }
+
+        document.querySelector(".banner .btns").innerHTML = btntag;
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
