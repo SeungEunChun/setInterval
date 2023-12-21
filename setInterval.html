@@ -79,6 +79,15 @@
         .banner .btns {
             text-align: center;
             padding: 1rem;
+
+        }
+
+        .banner .btns span.act {
+            color: red;
+        }
+
+        .banner .btns span {
+            margin: 0.5rem;
         }
     </style>
 </head>
@@ -105,21 +114,33 @@
         const swiperArr = ["bg0", "bg1", "bg2", "bg3", "bg4", "bg5"]
         let x = 0;
         const contentnum = 6;
-        // document.querySelector("#banner").classList.add("red")
-        function colorAuto() {
-            x++;
-            x %= contentnum;
-            document.querySelector("#banner").classList = "banner " + swiperArr[x];
-        }
-
-        setInterval(colorAuto, 3000)
-
+        //버튼만들기
         let btntag = "";
         for (i = 0; i < contentnum; i++) {
             btntag += "<span>" + i + "</span>"
         }
 
         document.querySelector(".banner .btns").innerHTML = btntag;
+        document.querySelectorAll(".banner .btns span")[x].classList = "act"
+
+        // document.querySelector("#banner").classList.add("red")
+        function colorAuto() { //창 활성화되고 3초 주기로 실행함
+            x++;
+            x %= contentnum;
+            document.querySelector("#banner").classList = "banner " + swiperArr[x];
+            document.querySelectorAll(".banner .btns span").forEach((el, idx) => {
+                // console.log(el, idx)
+                if (x === idx) {
+                    el.classList = "act"
+                } else {
+                    el.classList = ""
+                }
+            })
+
+        }
+
+        setInterval(colorAuto, 3000)
+
 
 
 
