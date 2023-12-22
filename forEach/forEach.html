@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach 연습</title>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!--
+        <script>
+        document.querySelectorAll("li").forEach((el, idx) => {
+            el.innerHTML = idx;
+        })
+        </script> 
+-->
+
+    <script>
+        // document.querySelectorAll("ul li")[0].innerHTML = 0;
+
+        // for (x = 0; x < 5; x++) {
+        // document.querySelectorAll("ul li").innerHtml = x;
+        // }
+
+        for (x = 0; x < 5; x++) {
+            // document.querySelectorAll("ul li").item(x).innerHTML = x;
+            document.querySelectorAll("ul li")[x].innerHTML = x;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
