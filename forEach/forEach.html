@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h1></h1>
     <ul>
         <li></li>
         <li></li>
@@ -25,19 +26,61 @@
 -->
 
     <script>
+
+        const naviinfo = ["네이버", "다음", "구글", "아마존", "유튜브"];
+        const h1data = "자바스크립트로 데이터 넣기"
+
+
         // document.querySelectorAll("ul li")[0].innerHTML = 0;
 
         // for (x = 0; x < 5; x++) {
         // document.querySelectorAll("ul li").innerHtml = x;
         // }
 
-        for (x = 0; x < 5; x++) {
-            // document.querySelectorAll("ul li").item(x).innerHTML = x;
-            document.querySelectorAll("ul li")[x].innerHTML = x;
-        }
+        // for (x = 0; x < 5; x++) {
+        //     // document.querySelectorAll("ul li").item(x).innerHTML = x;
+        //     document.querySelectorAll("ul li")[x].innerHTML = x;
+        // }
+
+        // for (x in naviinfo) {
+        //     i += `<li>${naviinfo[x]}</li>`
+
+        // }
+        // document.querySelector("ul").innerHTML = i;
+        let i = "";
+        naviinfo.map((el, idx) => {
+            if (el[3]) {
+                i += "<li></li>";
+            } else {
+                i += "<li>" + el + "</li>"
+            }
+        })
+
+
+        const lis = document.querySelectorAll("ul li").length;
+
+        document.querySelector("ul").innerHTML = i;
+
+
+        document.querySelector("h1").innerHTML = lis > 0 ? lis + "건이 검색되었습니다" : null;
 
 
 
+        // const navinfo = ["네이버", "다음", "구글", "아마존", "쿠팡"];
+        // let litags = "";
+        // navinfo.map((el, idx) => {
+        //     if (el !== "아마존") {
+        //         litags += `<li>${el}</li>`;      //지우씨 식
+        //     }
+        // });
+
+        // document.querySelector('ul').innerHTML = litags;
+
+
+        // naviInfo.map((el, idx) => {          //연수씨 식
+        //     if (idx != 3)
+        //         litags += "<li>" + el + "</li>"
+        // })
     </script>
 </body>
 
